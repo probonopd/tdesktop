@@ -6,10 +6,12 @@
 # Bundle Telegram and its dependencies as an AppImage for x86_64 Linux
 
 # We only want to create an AppImage for the disable_autoupdate build job
-if [ "$BUILD_VERSION" != "disable_autoupdate" ] ; exit 0
+if [ "$BUILD_VERSION" != "disable_autoupdate" ] ; then
+  exit 0
+fi
 
 APP=Telegram
-LOWERAPP=${APP,,} 
+LOWERAPP=${APP,,}
 
 ARCH=x86_64
 
@@ -72,4 +74,4 @@ generate_appimage
 # Upload AppImage
 ########################################################################
 
-curl --upload-file ../out/*AppImage https://transfer.sh/telegram-$VERSION-$ARCH.appimage 
+curl --upload-file ../out/*AppImage https://transfer.sh/telegram-$VERSION-$ARCH.appimage
