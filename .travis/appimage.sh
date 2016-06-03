@@ -40,7 +40,7 @@ get_apprun
 # Desktop and icon file to AppDir for AppRun to pick them up
 ########################################################################
 
-cat > <<\EOF
+cat > telegram.desktop <<\EOF
 [Desktop Entry]
 Type=Application
 Name=Telegram
