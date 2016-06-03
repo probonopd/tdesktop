@@ -46,4 +46,4 @@ before_install:
 
 script:
   - .travis/arch.sh
-  - .travis/appimage.sh
+  - bash -x .travis/appimage.sh
