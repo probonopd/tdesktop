@@ -44,7 +44,7 @@ get_apprun
 
 cp ../../lib/xdg/telegramdesktop.desktop ./telegram.desktop
 sed -i -e 's|^Exec=.*|Exec=telegram|g' ./telegram.desktop
-sed -i -e 's|^Exec=.*|Icon=telegram|g' ./telegram.desktop
+sed -i -e 's|^Icon=.*|Icon=telegram|g' ./telegram.desktop
 cp ../../tdesktop/Telegram/Resources/art/icon256.png ./telegram.png
 
 cat telegram.desktop
