@@ -42,15 +42,9 @@ get_apprun
 # Desktop and icon file to AppDir for AppRun to pick them up
 ########################################################################
 
-cat > telegram.desktop <<\EOF
-[Desktop Entry]
-Type=Application
-Name=Telegram
-Exec=Telegram
-Icon=telegram
-EOF
-
-cp ./tdesktop/Telegram/Resources/art/icon256.png ./telegram.png
+cp ../../tdesktop/lib/xdg/telegramdesktop.desktop .
+sed -i -e 's|^Exec=.*|Exec=telegram-desktop|g' ./telegramdesktop.desktop
+cp ../../tdesktop/Telegram/Resources/art/icon256.png ./telegram-desktop.png
 
 ########################################################################
 # Determine the version of the app; also include needed glibc version
