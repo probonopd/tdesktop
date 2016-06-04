@@ -27,7 +27,7 @@ wget -q https://github.com/probonopd/AppImages/raw/master/functions.sh -O ./func
 
 cd $APP.AppDir/
 
-cp ./tdesktop/Linux/Debug/Telegram usr/bin
+cp ./tdesktop/Linux/Debug/Telegram usr/bin/telegram
 
 # Reduce binary size
 strip usr/bin/*
@@ -42,9 +42,12 @@ get_apprun
 # Desktop and icon file to AppDir for AppRun to pick them up
 ########################################################################
 
-cp ../../tdesktop/lib/xdg/telegramdesktop.desktop .
-sed -i -e 's|^Exec=.*|Exec=telegram-desktop|g' ./telegramdesktop.desktop
-cp ../../tdesktop/Telegram/Resources/art/icon256.png ./telegram-desktop.png
+cp ../../tdesktop/lib/xdg/telegram.desktop .
+sed -i -e 's|^Exec=.*|Exec=telegram|g' ./telegram.desktop
+sed -i -e 's|^Exec=.*|Icon=telegram|g' ./telegram.desktop
+cp ../../tdesktop/Telegram/Resources/art/icon256.png ./telegram.png
+
+get_desktopintegration $LOWERAPP
 
 ########################################################################
 # Determine the version of the app; also include needed glibc version
