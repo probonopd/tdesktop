@@ -47,8 +47,7 @@ sed -i -e 's|^Exec=.*|Exec=telegram|g' ./telegram.desktop
 sed -i -e 's|^Exec=.*|Icon=telegram|g' ./telegram.desktop
 cp ../../tdesktop/Telegram/Resources/art/icon256.png ./telegram.png
 
-get_desktopintegration $LOWERAPP
-
+cat telegram.desktop
 ########################################################################
 # Determine the version of the app; also include needed glibc version
 ########################################################################
@@ -57,6 +56,9 @@ VER1=$(./AppRun --version | cut -d " "  -f 2)
 GLIBC_NEEDED=$(glibc_needed)
 VERSION=$VER1.glibc$GLIBC_NEEDED
 echo $VERSION
+
+get_desktopintegration $LOWERAPP
+cat telegram.desktop
 
 ########################################################################
 # AppDir complete
